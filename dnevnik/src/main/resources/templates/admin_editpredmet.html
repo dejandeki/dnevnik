@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Promeni novi predmet</title>
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+    </head>
+    <body>
+        <header id="header">
+            <div class="header-first">
+            </div>
+            <div class="pic">
+            </div>
+            <div class="header-second">
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <a class="klik" href = "#">Dodaj/izmeni</a> 
+                    </div>
+                    <div class="dropdown-content">
+                        <a class="klik_pregled" href="/admin/noviKorisnik">Novi korisnik</a>
+                        <a class="klik_pregled" href="/admin/noviUcenik">Novi ucenik</a>
+                        <a class="klik_pregled" href="/admin/novoOdeljenje">Novo odeljenje</a>
+                        <a class="klik_pregled" href="/admin/noviPredmet">Novi predmet</a>
+                        <a class="klik_pregled" href=" /admin/noviRaspored">Novi raspored</a>
+                        <a class="klik_pregled" href="/admin/obavestenja">Novo obavestenje</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <a class="klik" href = "#">Pregled</a>
+                    </div>
+                    <div class="dropdown-content">
+                        <a class="klik_pregled" href="/admin/sviKorisnici">Pregled korisnika</a>
+                        <a class="klik_pregled" href="/admin/sviRoditelji">Pregled roditelja</a>
+                        <a class="klik_pregled" href="/admin/sviUcitelji">Pregled ucitelja</a>
+                        <a class="klik_pregled" href="/admin/sviUcenici">Pregled ucenika</a>
+                        <a class="klik_pregled" href="/admin/svaOdeljenja">Pregled odeljenja</a>
+                        <a class="klik_pregled" href="/admin/sviPredmeti">Pregled predmeta</a>
+                        <a class="klik_pregled" href="/admin/listaOdeljenjaZaOdabirRasporeda">Pregled rasporeda</a>
+                        <a class="klik_pregled" href="/admin/listaObavestenja">Pregled obavestenja</a>
+                    </div>
+                </div> 
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <a class="klik" href = "/">Logout</a>
+                    </div>
+                </div> 
+            </div>
+        </header>
+        <div class="bodi">
+            <div align="center">
+                <h1>Edit Predmet</h1>
+                <br />
+                <form action="#" th:action="@{/savePredmet}" th:object="${predmet}" method="POST">
+
+
+                    <table border="0" cellpadding="10">
+                        <tr>
+                            <td>ID:</td>
+                            <td><input type="text" th:field="*{id_predmet}" readonly="readonly"/></td>
+                        </tr>
+                        <tr>
+                            <td>naziv:</td>
+                            <td><input type="text" th:field="*{naziv}" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit">Save</button> </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <footer id="footer">
+            <h1></h1>
+        </footer>
+    </body>
+</html>

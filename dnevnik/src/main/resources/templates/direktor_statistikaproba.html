@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1"/>
+        <title>Insert title here</title>
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+    </head>
+    <body>
+        <header id="header">
+                <div class="header-first">
+                </div>
+                <div class="pic">
+                </div>
+                <div class="header-second">
+                    <a class="klik" href="/ucitelj/listaUcenikaZaOdabirOcena">Dnevnik</a>
+                    <a class="klik" href="/ucitelj/obavestenja">Obavestenja</a>
+                    <a class="klik" href="/ucitelj/zakazivanje">Zakazivanje</a>
+                    <a class="klik" href="/ucitelj/poruke">Poruke</a>
+                    <a class="klik" href="/ucitelj/rasporedZaOdeljenje">raspored</a>
+                    
+                    <a class="klik" href="/">Logout</a>
+                </div>
+        </header>
+        </header>
+        <div class="bodi">
+            <div class="tabela_pregled">
+                <table border="2"><tbody>
+                        <tr>
+                            
+                            <th>predmet</th>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja : ${listaPredmeta}">
+                          
+                            <td th:text="${tempOdeljenja.naziv}">pretcas</td>
+                        </tr>
+
+                       
+                    </tbody></table>
+
+                <table border="2"><tbody>
+                        <tr>
+                            <th>prosek</th>
+                        </tr>
+
+                        <tr >
+                            <td th:text="${prosek2}">pretcas</td>
+                           
+                            
+                            </tr>
+                            <tr><td th:text="${prosek}">pretcas</td></tr>
+                        </tbody></table>
+            </div>  
+        </div>
+        <footer id="footer">
+            <h1>Ovo je futer</h1>
+        </footer>
+    </body>
+</html>

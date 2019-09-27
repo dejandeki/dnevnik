@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+<title>TODO supply a title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+<body>
+	<header id="header">
+		<div class="header-first"></div>
+		<div class="pic"></div>
+		<div class="header-second">
+			<a class="klik" href="/ucitelj/listaUcenikaZaOdabirOcena">Dnevnik</a>
+			<a class="klik" href="/ucitelj/obavestenja">Obavestenja</a> <a
+				class="klik" href="/ucitelj/zakazivanje">Zakazivanje</a> <a
+				class="klik" href="/ucitelj/poruke">Poruke</a> <a class="klik"
+				href="/ucitelj/rasporedZaOdeljenje">raspored</a> <a class="klik"
+				href="/">Logout</a>
+		</div>
+	</header>
+	<div class="bodi">
+		<div align="center">
+			<form action="#" th:action="@{/saveOcene}" th:object="${ocene}"
+				method="post">
+				<table border="2" cellpadding="10" style="float: left">
+					<tr>
+						<th>Ucenik</th>
+						<th>Predmet</th>
+						<th>Ocena</th>
+						<th>Datum</th>
+						<th>Zakljucna ocena</th>
+					</tr>
+					<tr>
+						<td><select th:field="*{ucenici}">
+
+								<option th:each="tempUcenici : ${ucenici}"
+									th:value="${tempUcenici.id_ucenik}"
+									th:utext="${tempUcenici.ime}+ ' '+${tempUcenici.prezime}"
+									/>
+
+						</select></td>
+						<td><select th:field="*{predmet}">
+								<option th:each="tempPredmeti : ${predmeti}"
+									th:value="${tempPredmeti.id_predmet}"
+									th:utext="${tempPredmeti.naziv}" />
+						</select></td>
+						<td><input type="text" name="ocena" value="" /></td>
+						<td><input type="datetime" placeholder="yyyy/mm/dd"
+							th:field="*{datum}" /></td>
+						<td><input type="text" name="zaklj_ocena" value="" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><button type="submit">Save</button></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	<footer id="footer">
+		<h1>Ovo je futer</h1>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+<title>TODO supply a title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+<body>
+	<header id="header">
+		<div class="header-first"></div>
+		<div class="pic"></div>
+		<div class="header-second">
+			<a class="klik" href="/roditelj/djackaKnjizica">Djacka knjizica</a>
+			 <a class="klik" href="/roditelj/listaobavestenja">Obavestenja</a> 
+				 <a class="klik" href="/roditelj/listaPoruka">Poruke</a>
+                <a class="klik" href="/roditelj/novaPoruka">Nova Poruka</a>
+				<a class="klik"	href="/roditelj/zakazivanje">Zakazivanje</a> 
+				<a class="klik"	href="/">Logout</a>
+		</div>
+	</header>
+	<div class="bodi">
+            <div align="center">
+                <form action="#" th:action="@{/savePoruka}" th:object="${poruka}"
+                      method="post">
+                    <table border="0" cellpadding="10">
+                        <tr>
+                            <td>Sadrzaj:</td>
+                            <td>
+                                <input type="text" th:field="*{sadrzaj_poruke}" placeholder="Unesite poruku..."/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Datum:</td>
+                            <td><input type="datetime" placeholder="yyyy/mm/dd" th:field="*{datum}" /></td>
+                        </tr>
+                        <tr>
+                            <td>Roditelj:</td>
+                            <td><input type="text" readonly="readonly" th:field="*{korisnik_roditelj.id_korisnik}" /></td>
+                        </tr>  
+							
+							 <tr>
+                            <td>Ucitelj:</td>
+                            <td><input type="text" readonly="readonly" th:field="*{korisnik_ucitelj.id_korisnik}" /></td>
+                        </tr> 
+                        <tr>
+                            <td colspan="2"><button type="submit">Save</button> </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+	<footer id="footer">
+		<h1>Ovo je futer</h1>
+	</footer>
+</body>
+</html>

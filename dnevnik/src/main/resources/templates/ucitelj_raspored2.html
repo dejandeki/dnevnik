@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1"/>
+        <title>Insert title here</title>
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+    </head>
+    <body>
+        <header id="header">
+                <div class="header-first">
+                </div>
+                <div class="pic">
+                </div>
+                <div class="header-second">
+                    <a class="klik" href="/ucitelj/listaUcenikaZaOdabirOcena">Dnevnik</a>
+                    <a class="klik" href="/ucitelj/obavestenja">Obavestenja</a>
+                    <a class="klik" href="/ucitelj/zakazivanje">Zakazivanje</a>
+                    <a class="klik" href="/ucitelj/poruke">Poruke</a>
+                    <a class="klik" href="/ucitelj/rasporedZaOdeljenje">raspored</a>
+                    
+                    <a class="klik" href="/">Logout</a>
+                </div>
+        </header>
+        </header>
+        <div class="bodi">
+            <div class="tabela_pregled">
+                <table border="2"><tbody>
+                        <tr>
+                            <th class="td"></th>
+                            <th>Ponedeljak</th>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja : ${ponedeljak}">
+                            <td class="td">pretcas</td>
+                            <td th:text="${tempOdeljenja.pretcas}">pretcas</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja : ${ponedeljak}">
+                            <td class="td">1</td>
+                            <td th:text="${tempOdeljenja.prvi}">prvi</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja : ${ponedeljak}">
+                            <td class="td">2</td>
+                            <td th:text="${tempOdeljenja.drugi}">drugi</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja : ${ponedeljak}">
+                            <td class="td">3</td>
+                            <td th:text="${tempOdeljenja.treci}">treci</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja : ${ponedeljak}">
+                            <td class="td">4</td>
+                            <td th:text="${tempOdeljenja.cetvrti}"></td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja : ${ponedeljak}">
+                            <td class="td">5</td>
+                            <td th:text="${tempOdeljenja.peti}"></td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja : ${ponedeljak}">
+                            <td class="td">6</td>
+                            <td th:text="${tempOdeljenja.sesti}"></td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja : ${ponedeljak}">
+                            <td class="td">7</td>
+                            <td th:text="${tempOdeljenja.sedmi}"></td>
+                        </tr>
+
+                    </tbody></table>
+
+                <table border="2"><tbody>
+                        <tr>
+                            <th>utorak</th>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja2 : ${utorak}">
+                            <td class="tab" th:text="${tempOdeljenja2.pretcas}">pretcas</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja2 : ${utorak}">
+                            <td th:text="${tempOdeljenja2.prvi}">prvi</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja2 : ${utorak}">
+                            <td th:text="${tempOdeljenja2.drugi}">drugi</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja2 : ${utorak}">
+                            <td th:text="${tempOdeljenja2.treci}">treci</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja2 : ${utorak}">
+                            <td th:text="${tempOdeljenja2.cetvrti}">cetvrti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja2 : ${utorak}">
+                            <td th:text="${tempOdeljenja2.peti}">peti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja2 : ${utorak}">
+                            <td th:text="${tempOdeljenja2.sesti}">sesti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja2 : ${utorak}">
+                            <td th:text="${tempOdeljenja2.sedmi}">sedmi</td>
+                        </tr>
+
+                    </tbody></table>
+
+                <table border="2"><tbody><tr>
+
+                            <th>sreda</th>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja3 : ${sreda}">
+                            <td th:text="${tempOdeljenja3.pretcas}"></td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja3 : ${sreda}">
+                            <td th:text="${tempOdeljenja3.prvi}">prvi</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja3 : ${sreda}">
+                            <td th:text="${tempOdeljenja3.drugi}">drugi</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja3 : ${sreda}">
+                            <td th:text="${tempOdeljenja3.treci}">treci</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja3 : ${sreda}">
+                            <td th:text="${tempOdeljenja3.cetvrti}">cetvrti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja3 : ${sreda}">
+                            <td th:text="${tempOdeljenja3.peti}">peti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja3 : ${sreda}">
+                            <td th:text="${tempOdeljenja3.sesti}">sesti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja3 : ${sreda}">
+                            <td th:text="${tempOdeljenja3.sedmi}">sedmi</td>
+                        </tr>
+
+                    </tbody></table>
+
+                <table border="2"><tbody><tr>
+
+                            <th>cetvrtak</th>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja4 : ${cetvrtak}">
+                            <td th:text="${tempOdeljenja4.pretcas}"></td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja4 : ${cetvrtak}">
+                            <td th:text="${tempOdeljenja4.prvi}">prvi</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja4 : ${cetvrtak}">
+                            <td th:text="${tempOdeljenja4.drugi}">drugi</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja4 : ${cetvrtak}">
+                            <td th:text="${tempOdeljenja4.treci}">treci</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja4 : ${cetvrtak}">
+                            <td th:text="${tempOdeljenja4.cetvrti}">cetvrti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja4 : ${cetvrtak}">
+                            <td th:text="${tempOdeljenja4.peti}">peti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja4 : ${cetvrtak}">
+                            <td th:text="${tempOdeljenja4.sesti}">sesti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja4 : ${cetvrtak}">
+                            <td th:text="${tempOdeljenja4.sedmi}">sedmi</td>
+                        </tr>
+
+                    </tbody></table>
+
+
+                <table border="2"><tbody><tr>
+
+                            <th>petak</th>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja5 : ${petak}">
+                            <td th:text="${tempOdeljenja5.pretcas}"></td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja5 : ${petak}">
+                            <td th:text="${tempOdeljenja5.prvi}">prvi</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja5 : ${petak}">
+                            <td th:text="${tempOdeljenja5.drugi}">drugi</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja5 : ${petak}">
+                            <td th:text="${tempOdeljenja5.treci}">treci</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja5 : ${petak}">
+                            <td th:text="${tempOdeljenja5.cetvrti}">cetvrti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja5 : ${petak}">
+                            <td th:text="${tempOdeljenja5.peti}">peti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja5 : ${petak}">
+                            <td th:text="${tempOdeljenja5.sesti}">sesti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja5 : ${petak}">
+                            <td th:text="${tempOdeljenja5.sedmi}">sedmi</td>
+                        </tr>
+                    </tbody></table>
+                <table border="2"><tbody><tr>
+                            <th>subota</th>
+                        </tr>
+                        <tr th:each="tempOdeljenja6 : ${subota}">
+                            <td th:text="${tempOdeljenja6.pretcas}"></td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja6 : ${subota}">
+                            <td th:text="${tempOdeljenja6.prvi}">prvi</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja6 : ${subota}">
+                            <td th:text="${tempOdeljenja6.drugi}">drugi</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja6 : ${subota}">
+                            <td th:text="${tempOdeljenja6.treci}">treci</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja6 : ${subota}">
+                            <td th:text="${tempOdeljenja6.cetvrti}">cetvrti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja6 : ${subota}">
+                            <td th:text="${tempOdeljenja6.peti}">peti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja6 : ${subota}">
+                            <td th:text="${tempOdeljenja6.sesti}">sesti</td>
+                        </tr>
+
+                        <tr th:each="tempOdeljenja6 : ${subota}">
+                            <td th:text="${tempOdeljenja6.sedmi}">sedmi</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>  
+        </div>
+        <footer id="footer">
+            <h1>Ovo je futer</h1>
+        </footer>
+    </body>
+</html>

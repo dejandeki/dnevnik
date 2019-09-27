@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <header id="header">
+            <div class="header-first">
+            </div>
+            <div class="pic">
+            </div>
+            <div class="header-second">
+                <a class="klik" href="/direktor/statistika">Statistika</a>
+                <a class="klik" href="/direktor/statistika2">Statistika2</a>
+                <a class="klik" href = "/">Logout</a>
+            </div>
+        </header>
+        <div class="bodi">
+
+            <h2 align="center">Statistika uspesnosti po predmetima na nivou skole</h2>
+
+            <div id="container" style="width: 1000px; height: 400px; margin: 0 auto"></div>
+            <script th:inline="javascript">
+                Highcharts.chart('container', {
+                chart : {
+                type : 'pie',
+                        options3d : {
+                        enabled : true,
+                                alpha : 50,
+                                beta : 0
+                        }
+                },
+                        title : {
+                        text : 'Result Status'
+                        },
+                        tooltip : {
+                        pointFormat : '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions : {
+                        pie : {
+                        allowPointSelect : true,
+                                cursor : 'pointer',
+                                depth : 35,
+                                dataLabels : {
+                                enabled : true,
+                                        format : '{point.name}'
+                                }
+                        }
+                        },
+                        series : [ {
+                        type : 'pie',
+                                name : 'Ratio',
+                                data : [ [ 'A', [[${I1}]] ], [ 'B', [[${II3}]] ],[ 'C', [[${V2}]] ],[ 'D', [[${III4}]] ]  ]
+                        } ]
+                });
+            </script>
+        </div>
+        <footer id="footer">
+            <h1>Ovo je futer</h1>
+        </footer>
+    </body>
+</html>

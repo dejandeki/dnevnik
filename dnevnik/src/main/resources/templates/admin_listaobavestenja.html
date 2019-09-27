@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Product Manager</title>
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+    </head>
+    <body>
+        <header id="header">
+            <div class="header-first">
+            </div>
+            <div class="pic">
+            </div>
+            <div class="header-second">
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <a class="klik" href = "#">Dodaj/izmeni</a> 
+                    </div>
+                    <div class="dropdown-content">
+                        <a class="klik_pregled" href="/admin/noviKorisnik">Novi korisnik</a>
+                        <a class="klik_pregled" href="/admin/noviUcenik">Novi ucenik</a>
+                        <a class="klik_pregled" href="/admin/novoOdeljenje">Novo odeljenje</a>
+                        <a class="klik_pregled" href="/admin/noviPredmet">Novi predmet</a>
+                        <a class="klik_pregled" href=" /admin/noviRaspored">Novi raspored</a>
+                        <a class="klik_pregled" href="/admin/obavestenja">Novo obavestenje</a>
+                        
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <a class="klik" href = "#">Pregled</a>
+                    </div>
+                    <div class="dropdown-content">
+                        <a class="klik_pregled" href="/admin/sviKorisnici">Pregled korisnika</a>
+                        <a class="klik_pregled" href="/admin/sviRoditelji">Pregled roditelja</a>
+                        <a class="klik_pregled" href="/admin/sviUcitelji">Pregled ucitelja</a>
+                        <a class="klik_pregled" href="/admin/sviUcenici">Pregled ucenika</a>
+                        <a class="klik_pregled" href="/admin/svaOdeljenja">Pregled odeljenja</a>
+                        <a class="klik_pregled" href="/admin/sviPredmeti">Pregled predmeta</a>
+                        <a class="klik_pregled" href="/admin/listaOdeljenjaZaOdabirRasporeda">Pregled rasporeda</a>
+                        <a class="klik_pregled" href="/admin/listaObavestenja">Pregled obavestenja</a>                    </div>
+                </div> 
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <a class="klik" href = "/">Logout</a>
+                    </div>
+                </div> 
+            </div>
+        </header>
+        <div class="bodi">
+            <div class="pregledi">
+        <div align="center">
+            <table border="1" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th>Sadrzaj:</th>
+                        <th>Datum:</th>
+                       <th>Usluga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="tempObavestenja : ${obavestenja}">
+                        <td th:text="${tempObavestenja.sadrzaj_obavestenja}">Sadrzaj</td>
+                        <td th:text="${tempObavestenja.datum}">Datum</td>
+                        <td class="usluga">
+                                    <a th:href="@{'/admin/deleteObavestenje/' + ${tempObavestenja.id_obavestenje}}">Delete</a>
+                                </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="/">Logout</a>
+        </div>
+        <footer id="footer">
+            <h1>Ovo je futer</h1>
+        </footer>
+    </body>
+</html>

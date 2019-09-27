@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Dodaj novog ucenika</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+    </head>
+    <body>
+        <header id="header">
+            <div class="header-first">
+            </div>
+            <div class="pic">
+            </div>
+            <div class="header-second">
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <a class="klik" href = "#">Dodaj/izmeni</a> 
+                    </div>
+                    <div class="dropdown-content">
+                        <a class="klik_pregled" href="/admin/noviKorisnik">Novi korisnik</a>
+                        <a class="klik_pregled" href="/admin/noviUcenik">Novi ucenik</a>
+                        <a class="klik_pregled" href="/admin/novoOdeljenje">Novo odeljenje</a>
+                        <a class="klik_pregled" href="/admin/noviPredmet">Novi predmet</a>
+                        <a class="klik_pregled" href=" /admin/noviRaspored">Novi raspored</a>
+                        <a class="klik_pregled" href="/admin/obavestenja">Novo obavestenje</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <a class="klik" href = "#">Pregled</a>
+                    </div>
+                    <div class="dropdown-content">
+                        <a class="klik_pregled" href="/admin/sviKorisnici">Pregled korisnika</a>
+                        <a class="klik_pregled" href="/admin/sviRoditelji">Pregled roditelja</a>
+                        <a class="klik_pregled" href="/admin/sviUcitelji">Pregled ucitelja</a>
+                        <a class="klik_pregled" href="/admin/sviUcenici">Pregled ucenika</a>
+                        <a class="klik_pregled" href="/admin/svaOdeljenja">Pregled odeljenja</a>
+                        <a class="klik_pregled" href="/admin/sviPredmeti">Pregled predmeta</a>
+                        <a class="klik_pregled" href="/admin/listaOdeljenjaZaOdabirRasporeda">Pregled rasporeda</a>
+                        <a class="klik_pregled" href="/admin/listaObavestenja">Pregled obavestenja</a>
+                    </div>
+                </div> 
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <a class="klik" href = "/">Logout</a>
+                    </div>
+                </div> 
+            </div>
+        </header>
+        <div class="bodi">
+            <div align="center">
+                <form action="#" th:action="@{/saveUcenik}" th:object="${ucenik}"
+                      method="post">
+
+                    <table border="0" cellpadding="10">
+                        <tr>
+                            <td>ime:</td>
+                            <td><input type="text" th:field="*{ime}" /></td>
+                        </tr>
+                        <tr>
+                            <td>prezime:</td>
+                            <td><input type="text" th:field="*{prezime}" /></td>
+                        </tr>
+                        <tr>
+                            <td>odeljenje:</td>
+                            <td> <select th:field="*{odeljenje}">
+
+                                    <option th:each="tempOdeljenje : ${odeljenje}"
+                                            th:value="${tempOdeljenje.id_odeljenje}"
+                                            th:utext="${tempOdeljenje.naziv}"/>
+                                </select></td>
+                        </tr>  
+                        <tr>
+                            <td>roditeljID:</td>
+                            <td><select th:field="*{korisnik}">
+
+                                    <option th:each="tempRoditelj : ${roditelj}"
+                                            th:value="${tempRoditelj.id_korisnik}"
+                                            th:utext="${tempRoditelj.ime} + ' ' + ${tempRoditelj.prezime} + ' ' + ${tempRoditelj.id_korisnik}"/>
+                                </select></td></td>
+                        </tr>                        
+                        <tr>
+                            <td colspan="2"><button type="submit">Save</button> </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <footer id="footer">
+            <h1>Ovo je futer</h1>
+        </footer>
+    </body>
+</html>

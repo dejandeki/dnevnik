@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+        <meta charset="utf-8"/>
+        <title>Product Manager</title>
+    </head>
+    <body>
+        <header id="header">
+            <div class="header-first">
+            </div>
+            <div class="pic">
+            </div>
+            <div class="header-second">
+                <a class="klik" href="/roditelj/djackaKnjizica">Djacka knjizica</a>
+                <a class="klik" href="/roditelj/listaObavestenja">Obavestenja</a>
+                <a class="klik" href="/roditelj/listaPoruka">Poruke</a>
+                <a class="klik" href="/roditelj/novaPoruka">Nova Poruka</a>
+                <a class="klik" href="/roditelj/zakazivanje">Zakazivanje</a>
+                <a class="klik" href="/">Logout</a>
+            </div>
+        </header>
+        <div align="center">
+            <table border="1" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th>Sadrzaj:</th>
+                        <th>Datum:</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="tempObavestenja : ${obavestenja}">
+                        <td th:text="${tempObavestenja.sadrzaj_obavestenja}">Sadrzaj</td>
+                        <td th:text="${tempObavestenja.datum}">Datum</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+            <a href="/">Logout</a>
+        </div>
+        <footer id="footer">
+            <h1>Ovo je futer</h1>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Promeni novog korisnika</title>
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+    </head>
+    <body>
+        <header id="header">
+            <div class="header-first">
+            </div>
+            <div class="pic">
+            </div>
+            <div class="header-second">
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <a class="klik" href = "#">Dodaj/izmeni</a> 
+                    </div>
+                    <div class="dropdown-content">
+                        <a class="klik_pregled" href="/admin/noviKorisnik">Novi korisnik</a>
+                        <a class="klik_pregled" href="/admin/noviUcenik">Novi ucenik</a>
+                        <a class="klik_pregled" href="/admin/novoOdeljenje">Novo odeljenje</a>
+                        <a class="klik_pregled" href="/admin/noviPredmet">Novi predmet</a>
+                        <a class="klik_pregled" href=" /admin/noviRaspored">Novi raspored</a>
+                        <a class="klik_pregled" href="/admin/obavestenja">Novo obavestenje</a>
+                        
+                        
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <a class="klik" href = "#">Pregled</a>
+                    </div>
+                    <div class="dropdown-content">
+                        <a class="klik_pregled" href="/admin/sviKorisnici">Pregled korisnika</a>
+                        <a class="klik_pregled" href="/admin/sviRoditelji">Pregled roditelja</a>
+                        <a class="klik_pregled" href="/admin/sviUcitelji">Pregled ucitelja</a>
+                        <a class="klik_pregled" href="/admin/sviUcenici">Pregled ucenika</a>
+                        <a class="klik_pregled" href="/admin/svaOdeljenja">Pregled odeljenja</a>
+                        <a class="klik_pregled" href="/admin/sviPredmeti">Pregled predmeta</a>
+                        <a class="klik_pregled" href="/admin/listaOdeljenjaZaOdabirRasporeda">Pregled rasporeda</a>
+                        <a class="klik_pregled" href="/admin/listaObavestenja">Pregled obavestenja</a>
+                    </div>
+                </div> 
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <a class="klik" href = "/">Logout</a>
+                    </div>
+                </div> 
+            </div>
+        </header>
+        <div class="bodi">
+            <div align="center">
+                <h1>Edit Korisnik</h1>
+                <br />
+                <form action="#" th:action="@{/saveKorisnik}" th:object="${korisnik}" method="POST">
+
+
+                    <table border="0" cellpadding="10">
+                        <tr>
+                            <td>ID:</td>
+                            <td><input type="text" th:field="*{id_korisnik}" readonly="readonly"/></td>
+                        </tr>
+                        <tr>
+                            <td>username:</td>
+                            <td><input type="text" th:field="*{username}" /></td>
+                        </tr>
+                        <tr>
+                            <td>password:</td>
+                            <td><input type="text" th:field="*{password}" /></td>
+                        </tr>
+                        <tr>
+                            <td>ime:</td>
+                            <td><input type="text" th:field="*{ime}" /></td>
+                        </tr>
+                        <tr>
+                            <td>Prezime:</td>
+                            <td><input type="text" th:field="*{prezime}" /></td>
+                        </tr>  
+                        <tr>
+                            <td>adresa:</td>
+                            <td><input type="text" th:field="*{adresa}" /></td>
+                        </tr>
+                        <tr>
+                            <td>telefon:</td>
+                            <td><input type="text" th:field="*{telefon}" /></td>
+                        </tr>
+                        <tr>
+                            <td>email:</td>
+                            <td><input type="text" th:field="*{email}" /></td>
+                        </tr>
+                        <tr>
+                            <td>uloga:</td>
+                            <td>
+                                <select th:field="*{uloga}">
+
+                                    <option th:each="uloge : ${uloge}"
+                                            th:value="${uloge.id_uloga}"
+                                            th:utext="${uloge.uloga}"/>
+                                </select>
+                            </td>
+                        </tr>  
+                                              
+                        <tr>
+                            <td colspan="2"><button type="submit">Save</button> </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <footer id="footer">
+            <h1></h1>
+        </footer>
+    </body>
+</html>

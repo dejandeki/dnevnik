@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+    </head>
+    <body>
+        <header id="header">
+            <div class="header-first">
+            </div>
+            <div class="pic">
+            </div>
+            <div class="header-second">
+                <a class="klik" href="/roditelj/djackaKnjizica">Djacka knjizica</a>
+                <a class="klik" href="/roditelj/listaObavestenja">Obavestenja</a>
+                <a class="klik" href="/roditelj/listaPoruka">Poruke</a>
+                <a class="klik" href="/roditelj/novaPoruka">Nova Poruka</a>
+                <a class="klik" href="/roditelj/zakazivanje">Zakazivanje</a>
+                <a class="klik" href="/">Logout</a>
+            </div>
+        </header>
+        <div class="bodi">
+                            <table border="1" cellpadding="10">
+                        <thead>
+                            <tr>
+                                <th>predmet</th>
+                                <th>ocena</th>
+                                <th>datum</th>
+                                <th>zakljucena ocena</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tempUcenici : ${ocene}">
+                                <td th:text="${tempUcenici.predmet.naziv}">predmet</td>
+                                <td th:text="${tempUcenici.ocena}">ocena</td>
+                                <td th:text="${tempUcenici.datum}">datum</td>
+                                <td th:text="${tempUcenici.zaklj_ocena}">zaklj ocena</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+        
+        </div>
+        <footer id="footer">
+            <h1>Ovo je futer</h1>
+        </footer>
+    </body>
+</html>
