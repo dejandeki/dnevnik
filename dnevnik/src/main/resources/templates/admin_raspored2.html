@@ -60,6 +60,7 @@
                         <tr> <td>5</td></tr>
                         <tr> <td>6</td></tr>
                         <tr> <td>7</td></tr>
+                        <tr> <td>izmeni</td></tr>
                     </tbody>
                 </table>
                 <table border="2"><tbody>
@@ -99,11 +100,13 @@
                         <tr th:each="tempOdeljenja : ${ponedeljak}">
                             <td th:text="${tempOdeljenja.sedmi}"></td>
                         </tr>
-                        
+                         <tr th:each="tempOdeljenja : ${ponedeljak}">
+                            <td><a th:href="@{'/admin/deletePonedeljak/' + ${tempOdeljenja.id}}">Obrisi</a></td>
+                        </tr>
                        
 
                     </tbody>
-                                            <a  th:each="tempOdeljenja : ${ponedeljak}" th:href="@{'/admin/deletePonedeljak/' + ${tempOdeljenja.id}}">Delete Ponedeljak</a>
+                                           
                     </table>
 
 
@@ -144,12 +147,14 @@
                         <tr th:each="tempOdeljenja2 : ${utorak}">
                             <td th:text="${tempOdeljenja2.sedmi}">sedmi</td>
                         </tr>
-
+                         <tr th:each="tempOdeljenja2 : ${utorak}">
+                            <td><a th:href="@{'/admin/deleteUtorak/' + ${tempOdeljenja2.id}}">Obrisi</a></td>
+                        </tr>
 
 
                     </tbody></table>
 
-                        <a  th:each="tempOdeljenja : ${utorak}" th:href="@{'/admin/deleteUtorak/' + ${tempOdeljenja.id}}">Delete Utorak</a>
+                       
 
 
                 <table border="2"><tbody><tr>
@@ -188,7 +193,9 @@
                         <tr th:each="tempOdeljenja3 : ${sreda}">
                             <td th:text="${tempOdeljenja3.sedmi}">sedmi</td>
                         </tr>
-
+						<tr th:each="tempOdeljenja3 : ${sreda}">
+                            <td><a th:href="@{'/admin/deleteSreda/' + ${tempOdeljenja3.id}}">Obrisi</a></td>
+                        </tr>
                     </tbody></table>
 
                 <table border="2"><tbody><tr>
@@ -227,7 +234,9 @@
                         <tr th:each="tempOdeljenja4 : ${cetvrtak}">
                             <td th:text="${tempOdeljenja4.sedmi}">sedmi</td>
                         </tr>
-
+						<tr th:each="tempOdeljenja4 : ${cetvrtak}">
+                            <td><a th:href="@{'/admin/deleteCetvrtak/' + ${tempOdeljenja4.id}}">Obrisi</a></td>
+                        </tr>
                     </tbody></table>
 
 
@@ -267,6 +276,9 @@
                         <tr th:each="tempOdeljenja5 : ${petak}">
                             <td th:text="${tempOdeljenja5.sedmi}">sedmi</td>
                         </tr>
+                        <tr th:each="tempOdeljenja5 : ${petak}">
+                            <td><a th:href="@{'/admin/deletePetak/' + ${tempOdeljenja5.id}}">Obrisi</a></td>
+                        </tr>
                     </tbody></table>
                 <table border="2"><tbody><tr>
                             <th>subota</th>
@@ -302,7 +314,9 @@
                         <tr th:each="tempOdeljenja6 : ${subota}">
                             <td th:text="${tempOdeljenja6.sedmi}">sedmi</td>
                         </tr>
-
+						<tr th:each="tempOdeljenja6 : ${subota}">
+                            <td><a th:href="@{'/admin/deleteSubota/' + ${tempOdeljenja6.id}}">Obrisi</a></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>  
