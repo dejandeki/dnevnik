@@ -413,7 +413,7 @@ public class AdminController {
 		return "admin_obavestenja";
 	}
 
-	@RequestMapping("/admin/deleteObavestenje/{id_obavestenja}")
+	@RequestMapping("/admin/deleteObavestenje/{id_obavestenje}")
 	public String deleteObavestenje(@PathVariable(name = "id_obavestenje") int id_obavestenje) {
 
 		obavestenjeService.delete(id_obavestenje);
